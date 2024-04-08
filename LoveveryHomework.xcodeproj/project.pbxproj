@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F601FD02BC45C1100880AE1 /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F601FCF2BC45C1100880AE1 /* NewMessageView.swift */; };
+		7F601FD62BC4803500880AE1 /* NewMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F601FD52BC4803500880AE1 /* NewMessageViewModel.swift */; };
+		7F601FD92BC4874200880AE1 /* NewMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F601FD82BC4874200880AE1 /* NewMessageModel.swift */; };
+		7F601FDD2BC4915E00880AE1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F601FDC2BC4915E00880AE1 /* HomeViewModel.swift */; };
+		7F601FE02BC4A1B900880AE1 /* ApiFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F601FDF2BC4A1B900880AE1 /* ApiFetcher.swift */; };
 		7FF892782BC1C31A00F92E9D /* LoveveryHomeworkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF892772BC1C31A00F92E9D /* LoveveryHomeworkApp.swift */; };
-		7FF8927A2BC1C31A00F92E9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF892792BC1C31A00F92E9D /* ContentView.swift */; };
+		7FF8927A2BC1C31A00F92E9D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF892792BC1C31A00F92E9D /* HomeView.swift */; };
 		7FF8927C2BC1C31C00F92E9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FF8927B2BC1C31C00F92E9D /* Assets.xcassets */; };
 		7FF892802BC1C31C00F92E9D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FF8927F2BC1C31C00F92E9D /* Preview Assets.xcassets */; };
 		7FF8928A2BC1C31C00F92E9D /* LoveveryHomeworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF892892BC1C31C00F92E9D /* LoveveryHomeworkTests.swift */; };
@@ -37,9 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F601FCF2BC45C1100880AE1 /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
+		7F601FD52BC4803500880AE1 /* NewMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageViewModel.swift; sourceTree = "<group>"; };
+		7F601FD82BC4874200880AE1 /* NewMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageModel.swift; sourceTree = "<group>"; };
+		7F601FDC2BC4915E00880AE1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		7F601FDF2BC4A1B900880AE1 /* ApiFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiFetcher.swift; sourceTree = "<group>"; };
 		7FF892742BC1C31A00F92E9D /* LoveveryHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveveryHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF892772BC1C31A00F92E9D /* LoveveryHomeworkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveveryHomeworkApp.swift; sourceTree = "<group>"; };
-		7FF892792BC1C31A00F92E9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7FF892792BC1C31A00F92E9D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7FF8927B2BC1C31C00F92E9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FF8927D2BC1C31C00F92E9D /* LoveveryHomework.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LoveveryHomework.entitlements; sourceTree = "<group>"; };
 		7FF8927F2BC1C31C00F92E9D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -78,6 +88,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F601FCE2BC45BF600880AE1 /* NewMessage */ = {
+			isa = PBXGroup;
+			children = (
+				7F601FD72BC4873300880AE1 /* Model */,
+				7F601FD22BC4801400880AE1 /* ViewModel */,
+				7F601FD12BC4800400880AE1 /* View */,
+			);
+			path = NewMessage;
+			sourceTree = "<group>";
+		};
+		7F601FD12BC4800400880AE1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7F601FCF2BC45C1100880AE1 /* NewMessageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7F601FD22BC4801400880AE1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7F601FD52BC4803500880AE1 /* NewMessageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7F601FD72BC4873300880AE1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F601FD82BC4874200880AE1 /* NewMessageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7F601FDE2BC4A17900880AE1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7F601FDF2BC4A1B900880AE1 /* ApiFetcher.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		7FF8926B2BC1C31A00F92E9D = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +153,7 @@
 		7FF892762BC1C31A00F92E9D /* LoveveryHomework */ = {
 			isa = PBXGroup;
 			children = (
+				7F601FDE2BC4A17900880AE1 /* Network */,
 				7FF892AD2BC1D14300F92E9D /* Messages */,
 				7FF892A22BC1C33100F92E9D /* Home */,
 				7FF892772BC1C31A00F92E9D /* LoveveryHomeworkApp.swift */,
@@ -139,6 +192,7 @@
 		7FF892A22BC1C33100F92E9D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7F601FCE2BC45BF600880AE1 /* NewMessage */,
 				7FF892B42BC1D1D000F92E9D /* Topics */,
 				7FF892B22BC1D1C100F92E9D /* Users */,
 				7FF892A52BC1C35700F92E9D /* Model */,
@@ -151,7 +205,7 @@
 		7FF892A32BC1C34600F92E9D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7FF892792BC1C31A00F92E9D /* ContentView.swift */,
+				7FF892792BC1C31A00F92E9D /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,6 +213,7 @@
 		7FF892A42BC1C35100F92E9D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				7F601FDC2BC4915E00880AE1 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -372,10 +427,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F601FD92BC4874200880AE1 /* NewMessageModel.swift in Sources */,
+				7F601FDD2BC4915E00880AE1 /* HomeViewModel.swift in Sources */,
+				7F601FE02BC4A1B900880AE1 /* ApiFetcher.swift in Sources */,
 				7FF892AB2BC1C46300F92E9D /* TopicsView.swift in Sources */,
-				7FF8927A2BC1C31A00F92E9D /* ContentView.swift in Sources */,
+				7FF8927A2BC1C31A00F92E9D /* HomeView.swift in Sources */,
 				7FF892782BC1C31A00F92E9D /* LoveveryHomeworkApp.swift in Sources */,
+				7F601FD02BC45C1100880AE1 /* NewMessageView.swift in Sources */,
 				7FF892A92BC1C42600F92E9D /* UsersView.swift in Sources */,
+				7F601FD62BC4803500880AE1 /* NewMessageViewModel.swift in Sources */,
 				7FF892B72BC1D61700F92E9D /* ListByItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
