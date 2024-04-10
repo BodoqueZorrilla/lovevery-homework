@@ -10,6 +10,7 @@ import Foundation
 final class HomeViewModel: ObservableObject {
     @Published var showSheetPresented = false
     @Published var usersViewModel = UsersViewModel()
+    @Published var topicsViewModel = TopicsViewModel()
 
     func showAddNewMessageScreen(show: Bool) {
         showSheetPresented = show

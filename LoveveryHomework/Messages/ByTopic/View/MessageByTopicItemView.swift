@@ -8,18 +8,20 @@
 import SwiftUI
 
 struct MessageByTopicItemView: View {
+    var userMessage: UserMessageByTopic
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
             Image(systemName: "person.circle.fill")
                 .font(.system(size: 30))
             VStack(alignment: .leading) {
-                Text("Sergio:")
+                Text("\(userMessage.username):")
                     .font(.system(.body, weight: .bold))
                     .padding([.trailing, .leading, .top])
                     .frame(maxWidth: .infinity, alignment: .leading)
-                Text("Andrés")
-                    .padding([.trailing, .leading, .bottom])
-                
+                ForEach(userMessage.messages) { message in
+                    Text(message.message)
+                        .padding([.trailing, .leading, .bottom])
+                }
             }
             .background(Color("itemMessageColor",
                               bundle: .main))
@@ -30,6 +32,9 @@ struct MessageByTopicItemView: View {
     }
 }
 
+#if DEBUG
 #Preview {
-    MessageByTopicItemView()
+    MessageByTopicItemView(userMessage: UserMessageByTopic(username: "Bodoque", 
+                                                           messages: [Message(subject: "Pets", message: "dogs love people")]))
 }
+#endif

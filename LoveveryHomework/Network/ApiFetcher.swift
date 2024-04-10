@@ -63,12 +63,6 @@ struct ApiResponse: Codable {
     let body: String
 }
 
-struct Message: Codable, Identifiable {
-    var id = UUID().uuidString
-    let subject: String
-    let message: String
-}
-
 enum PathsUrl {
     case messages
     case messagesByUser(user: String)

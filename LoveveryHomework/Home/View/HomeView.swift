@@ -17,7 +17,7 @@ struct HomeView: View {
                         .tabItem {
                             Label("Users", systemImage: "person")
                         }
-                    TopicsView()
+                    TopicsView(viewModel: viewModel.topicsViewModel)
                         .tabItem {
                             Label("Topics", systemImage: "message.and.waveform.fill")
                         }

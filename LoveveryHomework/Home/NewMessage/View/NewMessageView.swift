@@ -16,6 +16,11 @@ struct NewMessageView: View {
                 Color("itemMessageColor").ignoresSafeArea()
                 inputsMessageView()
             }
+            .alert(isPresented: $viewModel.showError){
+                Alert(title: Text("Oops!"),
+                      message: Text("Something went wrong! please try again later"),
+                      dismissButton: .default(Text("Got it!")))
+            }
             .navigationTitle("New Message")
             .toolbar(.visible)
             .toolbar {
@@ -30,7 +35,7 @@ struct NewMessageView: View {
                             await viewModel.postMessage()
                         }
                     }
-                        .disabled(!viewModel.isButtonEnabled)
+                    .disabled(!viewModel.isButtonEnabled)
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
@@ -65,19 +70,19 @@ struct NewMessageView: View {
         VStack(spacing: 10) {
             TextField("User",
                       text: $viewModel.userText)
-            .onChange(of: viewModel.userText, { _, newValue in
-                viewModel.userText = viewModel.limitText(newValue,
+            .onChange(of: viewModel.userText) {
+                viewModel.userText = viewModel.limitText($0,
                                                          with: 15)
-            })
+            }
             .padding()
             topicsMenuView()
             TextField("Message", text: $viewModel.messageText, axis: .vertical)
                 .lineLimit(5...10)
                 .padding()
-                .onChange(of: viewModel.messageText, { _, newValue in
-                    viewModel.messageText = viewModel.limitText(newValue,
+                .onChange(of: viewModel.messageText) {
+                    viewModel.messageText = viewModel.limitText($0,
                                                                 with: 60)
-                })
+                }
         }
         .textFieldStyle(.roundedBorder)
         .background(.white)

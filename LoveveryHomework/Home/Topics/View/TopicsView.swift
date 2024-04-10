@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct TopicsView: View {
+    @ObservedObject var viewModel: TopicsViewModel
     var body: some View {
         List {
-            ForEach(TopicsOptions.allCases, id: \.rawValue) { topic in
+            ForEach(viewModel.topics, id: \.rawValue) { topic in
                 if topic != .none {
-                    NavigationLink(destination: MessageByTopicView()) {
+                    NavigationLink(destination: MessageByTopicView(viewModel: MessagesByTopicViewModel(topic: topic))) {
                         ListByItemView(showAvatar: false,
                                        byItemTitle: topic.rawValue.uppercased())
                     }.listRowSeparator(.hidden)
@@ -25,6 +26,6 @@ struct TopicsView: View {
 
 #if DEBUG
 #Preview {
-    TopicsView()
+    TopicsView(viewModel: TopicsViewModel())
 }
 #endif
