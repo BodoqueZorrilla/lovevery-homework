@@ -44,7 +44,7 @@ struct NewMessageView: View {
     private func topicsMenuView() -> some View {
         Menu {
             ForEach(TopicsOptions.allCases, id: \.rawValue) { topic in
-                Button(topic.rawValue) {
+                Button(topic.rawValue.uppercased()) {
                     viewModel.changeTopic(topic: topic)
                 }
                 .disabled(topic == .none)

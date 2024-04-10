@@ -8,20 +8,36 @@
 import SwiftUI
 
 struct UsersView: View {
+    @ObservedObject var viewModel: UsersViewModel
     var body: some View {
-        List {
-            ForEach(1..<4) { _ in
-                ListByItemView(showAvatar: true, 
-                               byItemTitle: "Sergio")
-                    .listRowSeparator(.hidden)
+        VStack {
+            if viewModel.users.isEmpty {
+                Text("Please add a message in a topic you like the most")
+                    .padding()
+                    .multilineTextAlignment(.center)
+                    .font(.system(size: 20, weight: .bold))
+            } else {
+                List(viewModel.users) { user in
+                    NavigationLink(destination: MessagesByUserView(viewModel: MessagesByUserViewModel(user: user.username))) {
+                        ListByItemView(showAvatar: true,
+                                       byItemTitle: user.username)
+                        
+                    }.listRowSeparator(.hidden)
+                }
+                .listStyle(.plain)
             }
         }
-        .listStyle(.plain)
+        .onAppear {
+            viewModel.users.removeAll()
+            Task {
+                await viewModel.getUsers()
+            }
+        }
     }
 }
 
 #if DEBUG
 #Preview {
-    UsersView()
+    UsersView(viewModel: UsersViewModel())
 }
 #endif

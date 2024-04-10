@@ -59,8 +59,14 @@ struct ApiFetcher {
 }
 
 struct ApiResponse: Codable {
-  let statusCode: Int
-  let body: String
+    let statusCode: Int
+    let body: String
+}
+
+struct Message: Codable, Identifiable {
+    var id = UUID().uuidString
+    let subject: String
+    let message: String
 }
 
 enum PathsUrl {
