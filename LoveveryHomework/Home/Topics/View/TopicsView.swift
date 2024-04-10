@@ -10,10 +10,13 @@ import SwiftUI
 struct TopicsView: View {
     var body: some View {
         List {
-            ForEach(1..<4) { _ in
-                ListByItemView(showAvatar: false,
-                               byItemTitle: "Cars")
-                    .listRowSeparator(.hidden)
+            ForEach(TopicsOptions.allCases, id: \.rawValue) { topic in
+                if topic != .none {
+                    NavigationLink(destination: MessageByTopicView()) {
+                        ListByItemView(showAvatar: false,
+                                       byItemTitle: topic.rawValue.uppercased())
+                    }.listRowSeparator(.hidden)
+                }
             }
         }
         .listStyle(.plain)

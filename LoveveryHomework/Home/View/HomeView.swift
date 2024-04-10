@@ -13,7 +13,7 @@ struct HomeView: View {
         GeometryReader { geo in
             NavigationStack {
                 TabView {
-                    UsersView()
+                    UsersView(viewModel: viewModel.usersViewModel)
                         .tabItem {
                             Label("Users", systemImage: "person")
                         }
@@ -28,7 +28,9 @@ struct HomeView: View {
                 )
                 .navigationTitle("Lovevery HM")
                 .navigationBarTitleDisplayMode(.inline)
-                .sheet(isPresented: $viewModel.showSheetPresented, onDismiss: {
+                .sheet(isPresented: $viewModel.showSheetPresented,
+                       onDismiss: {
+                    viewModel.reloadUsersMessages()
                     viewModel.showAddNewMessageScreen(show: false)
                 }, content: {
                     NewMessageView(viewModel: NewMessageViewModel())
