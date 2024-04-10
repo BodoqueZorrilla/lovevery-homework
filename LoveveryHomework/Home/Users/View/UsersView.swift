@@ -12,7 +12,7 @@ struct UsersView: View {
     var body: some View {
         VStack {
             if viewModel.users.isEmpty {
-                Text("Please add a message in a topic you like the most")
+                Text("Please add a message about the topic you like")
                     .padding()
                     .multilineTextAlignment(.center)
                     .font(.system(size: 20, weight: .bold))

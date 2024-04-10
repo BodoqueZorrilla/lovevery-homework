@@ -7,6 +7,12 @@
 
 import Foundation
 
+struct Message: Codable, Identifiable {
+    var id = UUID().uuidString
+    let subject: String
+    let message: String
+}
+
 enum TopicsOptions: String, CaseIterable {
     case none = "<>"
     case football

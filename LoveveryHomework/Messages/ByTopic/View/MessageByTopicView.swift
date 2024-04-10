@@ -8,25 +8,34 @@
 import SwiftUI
 
 struct MessageByTopicView: View {
-
+    @ObservedObject var viewModel: MessagesByTopicViewModel
     var body: some View {
-        List(names) { message in
-            MessageByTopicItemView()
-                .listRowSeparator(.hidden)
-        }.listStyle(.plain)
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: BackButtonView())
-            .navigationTitle("Football")
-//            .onAppear {
-//                Task {
-//                    await viewModel.getMessages()
-//                }
-//            }
+        VStack {
+            if viewModel.messages.isEmpty {
+                Text("No messages in this Topic")
+                    .padding()
+                    .multilineTextAlignment(.center)
+                    .font(.system(size: 20, weight: .bold))
+            } else {
+                List(viewModel.messages) { message in
+                    MessageByTopicItemView(userMessage: message)
+                        .listRowSeparator(.hidden)
+                }.listStyle(.plain)
+            }
+        }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: BackButtonView())
+        .navigationTitle(viewModel.getTitle())
+        .onAppear {
+            Task {
+                await viewModel.fetchData()
+            }
+        }
     }
 }
 
 #if DEBUG
 #Preview {
-    MessageByTopicView()
+    MessageByTopicView(viewModel: MessagesByTopicViewModel(topic: .dogs))
 }
 #endif
