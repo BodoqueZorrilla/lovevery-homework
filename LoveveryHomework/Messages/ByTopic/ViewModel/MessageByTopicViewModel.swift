@@ -9,11 +9,12 @@ import Foundation
 
 final class MessagesByTopicViewModel: ObservableObject {
     @Published var messages = [UserMessageByTopic]()
-    private var apiCaller = ApiFetcher()
+    private let apiCaller: ApiFetcherProtocol
     private var topic: TopicsOptions
     private var hasMessages = false
-    init(topic: TopicsOptions) {
+    init(topic: TopicsOptions, apiFetcher: ApiFetcherProtocol) {
         self.topic = topic
+        self.apiCaller = apiFetcher
     }
 
     func getTitle() -> String {

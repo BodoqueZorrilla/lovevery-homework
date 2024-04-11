@@ -13,7 +13,8 @@ struct TopicsView: View {
         List {
             ForEach(viewModel.topics, id: \.rawValue) { topic in
                 if topic != .none {
-                    NavigationLink(destination: MessageByTopicView(viewModel: MessagesByTopicViewModel(topic: topic))) {
+                    NavigationLink(destination: MessageByTopicView(viewModel: MessagesByTopicViewModel(topic: topic, 
+                                                                                                       apiFetcher: ApiFetcher()))) {
                         ListByItemView(showAvatar: false,
                                        byItemTitle: topic.rawValue.uppercased())
                     }.listRowSeparator(.hidden)

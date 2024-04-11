@@ -7,13 +7,18 @@
 
 import Foundation
 
-final class MessagesByUserViewModel: ObservableObject {
+protocol MessagesByUserViewModelProtocol {
+    func getMessages() async throws
+}
+
+final class MessagesByUserViewModel: ObservableObject, MessagesByUserViewModelProtocol {
     @Published var messages: MessagesByUser?
-    private let apiCaller = ApiFetcher()
+    private let apiCaller: ApiFetcherProtocol
     private var user: String
     
-    init(user: String) {
+    init(user: String, apiFetcher: ApiFetcherProtocol) {
         self.user = user
+        self.apiCaller = apiFetcher
     }
     
     func getMessages() async {

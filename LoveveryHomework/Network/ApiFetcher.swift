@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct ApiFetcher {
+// MARK: Make this test to proved mocked ApiFetcher
+protocol ApiFetcherProtocol {
+    func fetch<T: Decodable>(type: T.Type, from urlString: String) async -> T?
+}
+
+struct ApiFetcher: ApiFetcherProtocol {
     private let mainURL = "https://abraxvasbh.execute-api.us-east-2.amazonaws.com/proto"
     private let decoder: JSONDecoder = {
         let decoder = JSONDecoder()
