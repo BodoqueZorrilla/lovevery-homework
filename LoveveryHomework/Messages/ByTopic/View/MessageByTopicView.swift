@@ -36,6 +36,7 @@ struct MessageByTopicView: View {
 
 #if DEBUG
 #Preview {
-    MessageByTopicView(viewModel: MessagesByTopicViewModel(topic: .dogs))
+    MessageByTopicView(viewModel: MessagesByTopicViewModel(topic: .dogs, 
+                                                           apiFetcher: ApiFetcher()))
 }
 #endif

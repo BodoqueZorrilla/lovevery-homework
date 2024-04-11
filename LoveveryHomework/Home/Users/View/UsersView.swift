@@ -18,7 +18,8 @@ struct UsersView: View {
                     .font(.system(size: 20, weight: .bold))
             } else {
                 List(viewModel.users) { user in
-                    NavigationLink(destination: MessagesByUserView(viewModel: MessagesByUserViewModel(user: user.username))) {
+                    NavigationLink(destination: MessagesByUserView(viewModel: MessagesByUserViewModel(user: user.username, 
+                                                                                                      apiFetcher: ApiFetcher()))) {
                         ListByItemView(showAvatar: true,
                                        byItemTitle: user.username)
                         

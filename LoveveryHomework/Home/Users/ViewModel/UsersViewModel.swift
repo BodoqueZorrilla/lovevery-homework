@@ -7,7 +7,11 @@
 
 import Foundation
 
-final class UsersViewModel: ObservableObject {
+protocol UsersViewModelProtocol {
+    func getUsers() async throws
+}
+
+final class UsersViewModel: ObservableObject, UsersViewModelProtocol {
     @Published var users = [UserModel]()
     private var apiCaller = ApiFetcher()
     

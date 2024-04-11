@@ -28,6 +28,7 @@ struct MessagesByUserView: View {
 
 #if DEBUG
 #Preview {
-    MessagesByUserView(viewModel: MessagesByUserViewModel(user: "Bodoque"))
+    MessagesByUserView(viewModel: MessagesByUserViewModel(user: "Bodoque", 
+                                                          apiFetcher: ApiFetcher()))
 }
 #endif

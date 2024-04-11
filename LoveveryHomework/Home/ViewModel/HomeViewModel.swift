@@ -7,7 +7,12 @@
 
 import Foundation
 
-final class HomeViewModel: ObservableObject {
+protocol HomeViewModelProtocol {
+    func showAddNewMessageScreen(show: Bool)
+    func reloadUsersMessages() async throws
+}
+
+final class HomeViewModel: ObservableObject, HomeViewModelProtocol {
     @Published var showSheetPresented = false
     @Published var usersViewModel = UsersViewModel()
     @Published var topicsViewModel = TopicsViewModel()
