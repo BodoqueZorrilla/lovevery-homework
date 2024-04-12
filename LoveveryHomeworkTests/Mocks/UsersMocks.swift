@@ -24,9 +24,9 @@ final class MockUsersViewModelMock: MockUsersViewModel {
     var getUsersCalled = false
     var getUsersCompletion: ((UsersFetchResult) -> Void)?
     var users = [UserModel]()
-    private let apiCaller: MockApiFetcher // Inject ApiFetcher here
+    private let apiCaller: MockApiFetcher
 
-    init(apiCaller: MockApiFetcher) { // New initializer
+    init(apiCaller: MockApiFetcher) {
       self.apiCaller = apiCaller
     }
 
@@ -49,7 +49,7 @@ final class MockApiFetcher {
     func fetch<T>(type: T.Type, from url: String) async throws -> T {
         fetchCalled = true
         fetchUrl = url
-        let mockResponseData = "{\"bodoque\": [{\"subject\": \"pets\", \"message\": \"cats are grumpy\"}, {\"subject\": \"pets\", \"message\": \"cats are grumpy\"}, {\"subject\": \"pets\", \"message\": \"cats are grumpy\"}], \"bodoque1\": [{\"subject\": \"pets\", \"message\": \"cats are grumpy\"}]}" // Example data structure
+        let mockResponseData = "{\"bodoque\": [{\"subject\": \"pets\", \"message\": \"cats are grumpy\"}, {\"subject\": \"pets\", \"message\": \"cats are grumpy\"}, {\"subject\": \"pets\", \"message\": \"cats are grumpy\"}], \"bodoque1\": [{\"subject\": \"pets\", \"message\": \"cats are grumpy\"}]}"
         guard let completion = fetchCompletion else { throw NSError(domain: "mock", code: 500) }
         completion(.success(ApiResponse(statusCode: 200, body: mockResponseData)))
         var users = [UserModel]()
