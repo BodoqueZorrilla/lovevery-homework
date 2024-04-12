@@ -34,6 +34,7 @@
 		7F656F0F2BC75D950061FD36 /* HomeMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F656F0E2BC75D950061FD36 /* HomeMocks.swift */; };
 		7F65EEF82BC950FE009C649E /* NewMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65EEF72BC950FE009C649E /* NewMessageTests.swift */; };
 		7F65EEFA2BC95121009C649E /* NewMessageMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65EEF92BC95121009C649E /* NewMessageMock.swift */; };
+		7F65EEFC2BC98B51009C649E /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 7F65EEFB2BC98B51009C649E /* Documentation.docc */; };
 		7FF892782BC1C31A00F92E9D /* LoveveryHomeworkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF892772BC1C31A00F92E9D /* LoveveryHomeworkApp.swift */; };
 		7FF8927A2BC1C31A00F92E9D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF892792BC1C31A00F92E9D /* HomeView.swift */; };
 		7FF8927C2BC1C31C00F92E9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FF8927B2BC1C31C00F92E9D /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 		7F656F0E2BC75D950061FD36 /* HomeMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMocks.swift; sourceTree = "<group>"; };
 		7F65EEF72BC950FE009C649E /* NewMessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageTests.swift; sourceTree = "<group>"; };
 		7F65EEF92BC95121009C649E /* NewMessageMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageMock.swift; sourceTree = "<group>"; };
+		7F65EEFB2BC98B51009C649E /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		7FF892742BC1C31A00F92E9D /* LoveveryHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveveryHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF892772BC1C31A00F92E9D /* LoveveryHomeworkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveveryHomeworkApp.swift; sourceTree = "<group>"; };
 		7FF892792BC1C31A00F92E9D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				7FF8927B2BC1C31C00F92E9D /* Assets.xcassets */,
 				7FF8927D2BC1C31C00F92E9D /* LoveveryHomework.entitlements */,
 				7FF8927E2BC1C31C00F92E9D /* Preview Content */,
+				7F65EEFB2BC98B51009C649E /* Documentation.docc */,
 			);
 			path = LoveveryHomework;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				7FF892A92BC1C42600F92E9D /* UsersView.swift in Sources */,
 				7F656F092BC72DB00061FD36 /* MessageByTopicViewModel.swift in Sources */,
 				7F601FD62BC4803500880AE1 /* NewMessageViewModel.swift in Sources */,
+				7F65EEFC2BC98B51009C649E /* Documentation.docc in Sources */,
 				7F28EFEC2BC6171100F96A5B /* UserModel.swift in Sources */,
 				7F656F0C2BC750230061FD36 /* MessageByTopicModel.swift in Sources */,
 				7FF892B72BC1D61700F92E9D /* ListByItemView.swift in Sources */,
