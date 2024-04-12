@@ -35,5 +35,4 @@ final class UsersTests: XCTestCase {
         XCTAssertTrue(mockApiCaller.fetchCalled)
         XCTAssertEqual(mockApiCaller.fetchUrl, PathsUrl.messages.pathId)
     }
-
 }

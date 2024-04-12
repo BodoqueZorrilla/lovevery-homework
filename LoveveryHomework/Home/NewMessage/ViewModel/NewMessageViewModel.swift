@@ -8,7 +8,14 @@
 import SwiftUI
 import Combine
 
-final class NewMessageViewModel: ObservableObject {
+protocol NewMessageViewModelProtocol {
+    func limitText(_ text: String, with limit: Int) -> String
+    func changeTopic(topic: TopicsOptions)
+    func dissmissView()
+    func postMessage() async throws
+}
+
+final class NewMessageViewModel: ObservableObject, NewMessageViewModelProtocol {
     @Published var isGoodUsername: Bool = true
     @Published var isButtonEnabled = false
     @Published var userText: String = ""

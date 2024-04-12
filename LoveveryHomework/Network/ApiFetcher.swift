@@ -59,7 +59,6 @@ struct ApiFetcher: ApiFetcherProtocol {
         print("HTTPURLResponse:", response)
         print("The response body is:", String(decoding: data, as: UTF8.self))
         return data
-        
     }
 }
 
